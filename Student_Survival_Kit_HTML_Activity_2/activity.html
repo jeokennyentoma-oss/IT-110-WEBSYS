@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survival Kit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #eef5f3;
+            color: #233238;
+            line-height: 1.6;
+        }
+        header {
+            background: #234b52;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+        nav {
+            background: #d9e9e5;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #234b52;
+            font-weight: bold;
+        }
+        main {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 18px;
+        }
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        figure {
+            margin: 0;
+        }
+        figure img, .images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        figcaption {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+        .notice {
+            border-left: 5px solid #234b52;
+            padding-left: 15px;
+        }
+        code {
+            background: #e9eeee;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #56666b;
+        }
+    </style>
+</head>
+
+<body id="top">
+
+<header id="main-heading">
+    <h1>🎒 Student Survival Kit</h1>
+    <p>A simple guide for being prepared, informed, and safe at school.</p>
+</header>
+
+<nav>
+    <a href="#images">Images</a>
+    <a href="#hyperlinks">Hyperlinks</a>
+    <a href="#multimedia">Multimedia</a>
+    <a href="#useful-tags">Useful Tags</a>
+    <a href="#dom">HTML DOM</a>
+</nav>
+
+<main id="main-content">
+
+    <!-- =========================================================
+         1. IMAGES
+         ========================================================= -->
+    <section id="images">
+        <h2>1. Images</h2>
+        <p>These original illustrations show some basic parts of a student safety and preparedness kit.</p>
+
+        <div class="images">
+            <figure>
+                <img src="images/campus-safety.png"
+                     alt="Illustration about knowing safe places around campus"
+                     width="600">
+                <figcaption>Know where you can get help on campus.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/emergency-kit.png"
+                     alt="Illustration of a simple student emergency kit">
+                <figcaption>Keep useful everyday items ready.</figcaption>
+            </figure>
+
+            <img src="images/student-support.png"
+                 alt="Illustration showing a student asking a trusted person for help">
+        </div>
+
+        <p><a href="activity.html#useful-tags">Go to the Useful Tags section</a></p>
+    </section>
+
+    <!-- =========================================================
+         2. HYPERLINKS
+         ========================================================= -->
+    <section id="hyperlinks">
+        <h2>2. Hyperlinks</h2>
+
+        <p>
+            <strong>Internal link:</strong>
+            <a href="activity.html#multimedia">Open the Multimedia section in this project</a>
+        </p>
+
+        <p>
+            <strong>External link:</strong>
+            <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies.html"
+               target="_blank" rel="noopener noreferrer">
+               View general emergency-preparedness information
+            </a>
+        </p>
+
+        <p>
+            <strong>Email link:</strong>
+            <a href="mailto:studenthelp@example.com">Email the Student Survival Kit team</a>
+        </p>
+
+        <p>
+            <strong>Same-page anchor:</strong>
+            <a href="#emergency-basics">Jump to Emergency Basics</a>
+        </p>
+
+        <div class="notice" id="emergency-basics">
+            <h3>Emergency Basics</h3>
+            <p>
+                If an emergency happens, stay as calm as possible, follow official school
+                instructions, move toward a safer location when instructed, and contact
+                trusted adults or emergency personnel for help.
+            </p>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         3. MULTIMEDIA
+         ========================================================= -->
+    <section id="multimedia">
+        <h2>3. Multimedia</h2>
+
+        <h3>Focus Bell</h3>
+        <audio controls>
+            <source src="media/focus-bell.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Short Safety Reminder</h3>
+        <video controls width="640">
+            <source src="media/safety-reminder.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </section>
+
+    <!-- =========================================================
+         4. USEFUL TAGS
+         ========================================================= -->
+    <section id="useful-tags">
+        <h2>4. Useful HTML Tags</h2>
+
+        <!-- The mark tag highlights an important phrase for readers. -->
+        <p><mark>Preparedness starts before an emergency happens.</mark></p>
+
+        <!-- The abbr tag gives an expanded meaning for an abbreviation. -->
+        <p><abbr title="Emergency Medical Services">EMS</abbr> may assist during serious emergencies.</p>
+
+        <!-- The blockquote tag separates an important reminder from normal paragraph text. -->
+        <blockquote>
+            “Know your surroundings, know who can help, and follow official instructions.”
+        </blockquote>
+
+        <!-- The code tag displays a small piece of HTML as code. -->
+        <p>A section can be identified in the DOM using <code>id="main-content"</code>.</p>
+
+        <p>&copy; 2026 Student Survival Kit — HTML Activity 2</p>
+    </section>
+
+    <!-- =========================================================
+         5. HTML DOM
+         ========================================================= -->
+    <section id="dom">
+        <h2>5. HTML DOM</h2>
+        <p>
+            This page uses IDs such as <code>main-heading</code>,
+            <code>main-content</code>, <code>images</code>, and
+            <code>useful-tags</code> so they can be identified in the DOM.
+        </p>
+
+        <div id="dom-example">
+            <article>
+                <h3>Example Parent-Child Structure</h3>
+                <ul>
+                    <li>main</li>
+                    <li>section</li>
+                    <li>article</li>
+                    <li>ul</li>
+                    <li>li</li>
+                </ul>
+            </article>
+        </div>
+
+        <p><a href="#top">Back to top</a></p>
+    </section>
+
+</main>
+
+<footer>
+    Student Survival Kit • HTML Practical Application Activity
+</footer>
+
+<!--
+Parent-child explanation:
+The <main> element is the parent of the page's main <section> elements.
+Inside each section, child elements such as <h2>, <p>, <div>, and <img> are nested under that section.
+For example, the #images section is a parent of its figure elements, and each figure is a parent of its image and figcaption.
+The DOM represents these relationships as a tree, where elements can contain other elements.
+-->
+
+</body>
+</html>
