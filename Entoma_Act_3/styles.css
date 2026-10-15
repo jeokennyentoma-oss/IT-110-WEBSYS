@@ -1,0 +1,405 @@
+/* =========================================================
+   01 / RESET & DESIGN TOKENS
+   A compact visual system for a modern IT portfolio card.
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --page: #080e19;
+    --panel: #101b2b;
+    --panel-soft: #142338;
+    --ink: #edf4ff;
+    --muted: #9aacc5;
+    --accent: #66e4c5;
+    --accent-blue: #8cacff;
+    --outline: rgba(172, 204, 255, 0.15);
+    --shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    padding: 28px 18px 18px;
+    color: var(--ink);
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    background-color: var(--page);
+    background-image:
+        radial-gradient(ellipse 56% 32% at 80% 2%, rgba(46, 105, 178, 0.21), transparent 75%),
+        radial-gradient(ellipse 35% 25% at 6% 55%, rgba(40, 150, 140, 0.09), transparent 80%),
+        linear-gradient(rgba(150, 190, 240, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(150, 190, 240, 0.025) 1px, transparent 1px);
+    background-size: auto, auto, 32px 32px, 32px 32px;
+}
+
+/* =========================================================
+   02 / TYPOGRAPHY & THE HEADER
+   ========================================================= */
+h1, h2 {
+    color: white; /* Named-color example; other colors use hex and rgba. */
+    font-weight: 750;
+    line-height: 1.2;
+}
+
+header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto 34px;
+    padding: 48px 40px 38px;
+    border: 1px solid var(--outline);
+    border-radius: 26px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 90% 25%, rgba(102, 228, 197, 0.11), transparent 33%),
+        linear-gradient(125deg, #1a2e4c 0%, #101d30 48%, #112132 100%);
+    box-shadow: var(--shadow);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -64px;
+    top: -128px;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(102, 228, 197, 0.14);
+    border-radius: 50%;
+    box-shadow: 0 0 0 60px rgba(102, 228, 197, 0.027),
+                0 0 0 120px rgba(102, 228, 197, 0.02);
+}
+
+header::after {
+    content: "ACTIVITY 03  /  PROFILE";
+    position: absolute;
+    top: 22px;
+    left: 29px;
+    color: var(--accent);
+    font-size: 0.66rem;
+    font-weight: 750;
+    letter-spacing: 0.2em;
+}
+
+h1 {
+    margin: 24px 0 10px;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+}
+
+h1::after {
+    content: "THIRD-YEAR INFORMATION TECHNOLOGY";
+    display: block;
+    margin: 14px 0 24px;
+    color: var(--accent);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+}
+
+/* =========================================================
+   03 / NAVIGATION & INTERACTION
+   ========================================================= */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav a {
+    display: inline-block;
+    min-width: 88px;
+    padding: 10px 18px;
+    border: 1px solid rgba(147, 187, 229, 0.23);
+    border-radius: 999px;
+    color: #d5e5fa;
+    background-color: rgba(10, 20, 34, 0.5);
+    font-size: 0.85rem;
+    font-weight: 650;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease,
+                border-color 180ms ease, transform 180ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #071820;
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+nav a:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   04 / GRID LAYOUT & THE BOX MODEL
+   ========================================================= */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    min-height: 252px;
+    margin: 0 auto;
+    margin-bottom: 22px;
+    padding: 28px;
+    border: 1px solid var(--outline);
+    border-radius: 19px;
+    color: var(--muted);
+    background:
+        linear-gradient(145deg, rgba(142, 184, 235, 0.045), transparent 68%),
+        var(--panel);
+    box-shadow: var(--shadow);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover {
+    border-color: rgba(102, 228, 197, 0.38);
+    box-shadow: 0 28px 68px rgba(0, 0, 0, 0.36);
+}
+
+/* Rendered card width = 500px because border-box includes
+   the 28px left/right padding and 1px left/right border. */
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(165, 199, 244, 0.13);
+    font-size: 1.25rem;
+    letter-spacing: -0.025em;
+}
+
+h2::before {
+    content: "";
+    display: inline-block;
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background-color: var(--accent);
+    box-shadow: 0 0 18px rgba(102, 228, 197, 0.35);
+    transform: rotate(45deg);
+}
+
+.card p {
+    margin-bottom: 11px;
+    color: #99abc6;
+    font-size: 0.94rem;
+}
+
+/* CASCADE: both .card p rules have equal specificity.
+   This later rule wins for color because it comes last. */
+.card p {
+    color: #bdcbe0;
+}
+
+.intro {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+#about {
+    position: relative;
+    border-color: rgba(102, 228, 197, 0.42);
+    background:
+        linear-gradient(145deg, rgba(64, 179, 156, 0.105), transparent 58%),
+        var(--panel-soft);
+}
+
+#about::after {
+    content: "OPEN TO LEARN";
+    position: absolute;
+    top: -12px;
+    right: 22px;
+    padding: 5px 11px;
+    border: 1px solid #3b968b;
+    border-radius: 999px;
+    color: #072923;
+    background-color: var(--accent);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+}
+
+/* =========================================================
+   05 / SKILLS, DISPLAY, VISIBILITY & OVERFLOW
+   ========================================================= */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    list-style: none;
+}
+
+.skills-list > li {
+    padding: 11px 18px;
+    border: 1px solid rgba(140, 172, 255, 0.28);
+    border-radius: 12px;
+    color: #c9dbff;
+    background-color: rgba(104, 136, 228, 0.12);
+    font-size: 0.89rem;
+    font-weight: 700;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.skills-list > li:hover {
+    background-color: rgba(104, 136, 228, 0.24);
+    transform: translateY(-2px);
+}
+
+/* display:none removes the paragraph AND its layout space.
+   visibility:hidden hides the words BUT leaves the space. */
+.hide-none {
+    display: none;
+}
+
+.hide-visibility {
+    visibility: hidden;
+}
+
+#notes p:last-child {
+    display: inline-block;
+    padding: 10px 14px;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    color: var(--ink);
+    background-color: rgba(102, 228, 197, 0.07);
+}
+
+.scroll-box {
+    height: 252px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #437d86 #132236;
+}
+
+.scroll-box p {
+    padding-right: 6px;
+}
+
+/* =========================================================
+   06 / FOOTER & RESPONSIVE POLISH
+   ========================================================= */
+footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 16px 30px;
+    color: #7e92ad;
+    font-size: 0.77rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    border-top: 1px solid var(--outline);
+}
+
+@media (max-width: 1080px) {
+    main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 560px) {
+    body {
+        padding: 12px;
+    }
+
+    header {
+        margin-bottom: 25px;
+        padding: 50px 15px 26px;
+        border-radius: 19px;
+    }
+
+    header::after {
+        left: 17px;
+        top: 17px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h1::after {
+        font-size: 0.63rem;
+        letter-spacing: 0.12em;
+    }
+
+    nav a {
+        min-width: 76px;
+        padding: 9px 12px;
+    }
+
+    .card {
+        min-height: 232px;
+        padding: 22px;
+    }
+
+    #about::after {
+        right: 10px;
+    }
+
+    .scroll-box {
+        height: 252px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   07 / REFLECTION QUESTIONS
+
+   1. The second .card p rule wins because both rules target
+      the same elements with equal specificity. When two
+      declarations are equally specific, the later one in the
+      stylesheet takes priority.
+
+   2. With content-box, the card's rendered width would be
+      558px: 500px content + 28px left padding + 28px right
+      padding + 1px left border + 1px right border = 558px.
+      Border-box instead keeps the overall width at 500px.
+
+   3. I would use visibility: hidden when I need an element
+      to disappear visually without shifting the surrounding
+      layout. I would choose display: none when the element
+      should not occupy any space at all.
+   ========================================================= */
